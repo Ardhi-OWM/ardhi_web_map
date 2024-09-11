@@ -1,0 +1,14 @@
+/* src/MapComponent.css */
+
+.map-container {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    width: 100px; /*adjust the size of the logo*/
+    z-index: 1000; /*ensures the logo is above the map*/
+
+}

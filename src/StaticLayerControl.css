@@ -1,0 +1,20 @@
+.leaflet-control-layers-expanded {
+    display: block !important;
+    width: 150px
+}
+
+/* ensure the labels stays visible*/ 
+.leaflet-control-layers-list {
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* hide the collapse icon
+.leaflet-control-layers-toggle{
+    display: block !important
+    
+}*/
+
+.leaflet-control-layers-separator{
+    margin: 10px 0;
+}
