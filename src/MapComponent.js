@@ -29,7 +29,7 @@ const MapComponent = () => {
 
     return (
         <div className='map-container'>
-        <img src={require('./assets/logo-no-background.png')} alt="Logo" className='logo'/>
+        <img src={require('./assets/logo-white.png')} alt="Logo" className='logo'/>
        
 
   <MapContainer center={position} zoom={13} style={{ height: "100vh", width: "100%" }}>
