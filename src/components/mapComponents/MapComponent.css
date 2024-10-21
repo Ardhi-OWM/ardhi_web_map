@@ -1,14 +1,13 @@
 /* src/MapComponent.css */
 
+/* For the map container */
 .map-container {
-    position: relative;
-}
-
-.logo {
-    position: absolute;
-    top: 10px;
-    left: 50px;
-    width: 100px; /*adjust the size of the logo*/
-    z-index: 1000; /*ensures the logo is above the map*/
-
+    position: fixed;      /* Fix the map container to the viewport */
+    top: 80px;           /* Adjust based on the height of your header */
+    right: 0;             /* Align to the right */
+    width: 80vw;          /* 80% of the viewport width */
+    height: 75vh;         /* 50% of the viewport height */
+    z-index: 1;           /* Ensure it stays below the header */
+    border-radius: 15px;  /* Add rounded corners */
+    overflow: hidden;     /* Ensure content doesn't overflow the rounded corners */
 }
