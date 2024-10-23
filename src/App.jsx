@@ -2,12 +2,17 @@
 //import React from 'react';
 import MapComponent from './Components/mapComponents/MapComponent';
 import Header from './Components/Header';
+import SideBar from './Components/SideBar';
 
 function App() {
     return (
         <div className="App">
             < Header />
-            <MapComponent />
+            <div className="flex">
+                <SideBar />
+                <MapComponent />
+            </div>
+
         </div>
     );
 }

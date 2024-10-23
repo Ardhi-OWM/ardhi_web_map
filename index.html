@@ -13,67 +13,10 @@
     <title>Ardhi Web App</title>
   </head>
   <body class="bg-white dark:bg-black">
-    <div id="root"></div>
-    <div>
-      <span id="theme-toggle" class="underline cursor-pointer underline-offset-4 ">Toggle Theme</span>
+    <div class="flex flex-col min-h-screen justify-end">
+      <div id="root"></div>
     </div>
-    <script type="module" src="/src/main.jsx"></script>
 
-    <script>
-      // Select the toggle button and the html element
-      const themeToggle = document.getElementById("theme-toggle");
-      const html = document.querySelector("html");
-    
-      // Function to apply theme based on saved theme or system preference
-      function applySavedTheme() {
-        // Check if a theme is saved in localStorage
-        const savedTheme = localStorage.getItem('theme');
-    
-        // If a theme is saved, apply it and update the button text
-        if (savedTheme) {
-          if (savedTheme === 'dark') {
-            html.classList.add('dark');
-            html.classList.remove('white');
-            themeToggle.textContent = 'Light Mode'; // Show "Light Mode" button text when in dark mode
-          } else {
-            html.classList.add('white');
-            html.classList.remove('dark');
-            themeToggle.textContent = 'Dark Mode'; // Show "Dark Mode" button text when in light mode
-          }
-        } else {
-          // If no theme is saved, check the system preference
-          if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-            html.classList.add('white');
-            html.classList.remove('dark');
-            themeToggle.textContent = 'Dark Mode'; // System prefers light mode, so set button to "Dark Mode"
-          } else {
-            html.classList.add('dark');
-            html.classList.remove('white');
-            themeToggle.textContent = 'Light Mode'; // System prefers dark mode, so set button to "Light Mode"
-          }
-        }
-      }
-    
-      // Call this function when the page loads to apply the saved theme
-      applySavedTheme();
-    
-      // Event listener for the theme toggle button
-      themeToggle.addEventListener("click", () => {
-        if (html.classList.contains("dark")) {
-          html.classList.remove("dark");
-          html.classList.add("white");
-          localStorage.setItem('theme', 'white'); // Save 'white' theme to localStorage
-          themeToggle.textContent = 'Dark Mode'; // Change button text to "Dark Mode"
-        } else {
-          html.classList.remove("white");
-          html.classList.add("dark");
-          localStorage.setItem('theme', 'dark'); // Save 'dark' theme to localStorage
-          themeToggle.textContent = 'Light Mode'; // Change button text to "Light Mode"
-        }
-      });
-    </script>
-    
-    
-    
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

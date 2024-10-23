@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Add custom color schemes if needed
+        ourGreen: '#2ecc40',
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],

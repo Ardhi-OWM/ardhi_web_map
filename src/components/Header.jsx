@@ -5,8 +5,6 @@ import { transparentLogo } from "../assets";
 
 
 
-
-
 const Header = () => {
 
   return (
