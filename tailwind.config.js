@@ -10,6 +10,10 @@ export default {
       colors: {
         // Add custom color schemes if needed
       },
+      fontFamily: {
+        'space-grotesk': ['Space Grotesk', 'sans-serif'],
+        'space-mono': ['Space Mono', 'monospace'],
+      },
     },
   },
   plugins: [],

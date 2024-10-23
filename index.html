@@ -1,26 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Web Application for Ardhi - An advanced webGIS application that simplifies geospatial analysis by allowing users to easily visualize data and analytics on open-source basemaps."
+    />
+
     <title>Ardhi Web App</title>
   </head>
   <body class="bg-white dark:bg-black">
     <div id="root"></div>
     <div>
-      <button id="theme-toggle" class="p-1 border rounded">
-        Toggle Theme
-      </button>
+      <button id="theme-toggle" class="p-1 border rounded">Toggle Theme</button>
     </div>
     <script type="module" src="/src/main.jsx"></script>
 
     <script>
+      // Select the toggle button and the html element
       const themeToggle = document.getElementById("theme-toggle");
       const html = document.querySelector("html");
+    
+      // Function to apply theme based on saved theme or system preference
+      function applySavedTheme() {
+        // Check if a theme is saved in localStorage
+        const savedTheme = localStorage.getItem('theme');
+        
+        // If a theme is saved, apply it
+        if (savedTheme) {
+          if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            html.classList.remove('white');
+          } else {
+            html.classList.add('white');
+            html.classList.remove('dark');
+          }
+        } else {
+          // If no theme is saved, check the system preference
+          if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+            html.classList.add('white');
+            html.classList.remove('dark');
+          } else {
+            html.classList.add('dark');
+            html.classList.remove('white');
+          }
+        }
+      }
+    
+      // Call this function when the page loads to apply the saved theme
+      applySavedTheme();
+    
+      // Event listener for the theme toggle button
       themeToggle.addEventListener("click", () => {
-        html.classList.toggle("dark");
-      }); 
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          html.classList.add("white");
+          localStorage.setItem('theme', 'white'); // Save 'white' theme to localStorage
+        } else {
+          html.classList.remove("white");
+          html.classList.add("dark");
+          localStorage.setItem('theme', 'dark'); // Save 'dark' theme to localStorage
+        }
+      });
     </script>
+    
+    
   </body>
 </html>

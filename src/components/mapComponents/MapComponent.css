@@ -8,6 +8,6 @@
     width: 80vw;          /* 80% of the viewport width */
     height: 75vh;         /* 50% of the viewport height */
     z-index: 1;           /* Ensure it stays below the header */
-    border-radius: 15px;  /* Add rounded corners */
+    border-radius: 10px;  /* Add rounded corners */
     overflow: hidden;     /* Ensure content doesn't overflow the rounded corners */
 }
