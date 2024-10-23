@@ -15,7 +15,7 @@
   <body class="bg-white dark:bg-black">
     <div id="root"></div>
     <div>
-      <button id="theme-toggle" class="p-1 border rounded">Toggle Theme</button>
+      <span id="theme-toggle" class="underline cursor-pointer underline-offset-4 ">Toggle Theme</span>
     </div>
     <script type="module" src="/src/main.jsx"></script>
 
@@ -28,24 +28,28 @@
       function applySavedTheme() {
         // Check if a theme is saved in localStorage
         const savedTheme = localStorage.getItem('theme');
-        
-        // If a theme is saved, apply it
+    
+        // If a theme is saved, apply it and update the button text
         if (savedTheme) {
           if (savedTheme === 'dark') {
             html.classList.add('dark');
             html.classList.remove('white');
+            themeToggle.textContent = 'Light Mode'; // Show "Light Mode" button text when in dark mode
           } else {
             html.classList.add('white');
             html.classList.remove('dark');
+            themeToggle.textContent = 'Dark Mode'; // Show "Dark Mode" button text when in light mode
           }
         } else {
           // If no theme is saved, check the system preference
           if (window.matchMedia("(prefers-color-scheme: light)").matches) {
             html.classList.add('white');
             html.classList.remove('dark');
+            themeToggle.textContent = 'Dark Mode'; // System prefers light mode, so set button to "Dark Mode"
           } else {
             html.classList.add('dark');
             html.classList.remove('white');
+            themeToggle.textContent = 'Light Mode'; // System prefers dark mode, so set button to "Light Mode"
           }
         }
       }
@@ -59,13 +63,16 @@
           html.classList.remove("dark");
           html.classList.add("white");
           localStorage.setItem('theme', 'white'); // Save 'white' theme to localStorage
+          themeToggle.textContent = 'Dark Mode'; // Change button text to "Dark Mode"
         } else {
           html.classList.remove("white");
           html.classList.add("dark");
           localStorage.setItem('theme', 'dark'); // Save 'dark' theme to localStorage
+          themeToggle.textContent = 'Light Mode'; // Change button text to "Light Mode"
         }
       });
     </script>
+    
     
     
   </body>
