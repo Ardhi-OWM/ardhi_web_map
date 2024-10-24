@@ -8,7 +8,7 @@ const Header = () => {
   console.log("Current Pathname:", window.location.pathname);
 
   return (
-    <div className="fixed top-1 left-0 w-full z-50 pb-2 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm border-gray-600 border-opacity-45">
+    <div className="fixed py-2 top-0 left-0 w-full z-50 pb-2lg:bg-n-8/90 lg:backdrop-blur-sm border-b border-gray-500/[.25] ">
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
          {/* Logo Section */}
         <a className="block w-[12rem] xl:mr-8" href="/dashboard">
@@ -20,7 +20,7 @@ const Header = () => {
               <a
                 key={item.id}
                 href={item.href}
-                className={`block relative border-b border-current rounded-lg px-3 mx-5 text-[15px] tracking-wide"
+                className={`block relative border-b border-current  px-3 mx-5 text-[15px] tracking-wide"
                 ${window.location.pathname === item.href
                     ? "border-current"
                     : "border-transparent hover:border-current"

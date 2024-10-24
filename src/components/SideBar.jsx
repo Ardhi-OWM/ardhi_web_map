@@ -104,7 +104,7 @@ const SideBar = () => {
     // ---------------------------- RETURN ----------------------------
     return (
         // <div className="flex flex-col min-h-screen justify-end border-r border-gray-500 border-opacity-20 rounded p-3 overflow-y-auto">
-        <div className="flex flex-col min-h-screen justify-end border-r border-gray-500 border-opacity-20 rounded p-3 relative z-10 ">
+        <div className="relative flex flex-col min-h-screen justify-end p-3 z-10 custom-border">
             <div className="pb-10 pl-5">
                 <div className="pb-5">
                     <span
@@ -116,7 +116,7 @@ const SideBar = () => {
                     </span>
                 </div>
                 {/* Settings, Bell, and BadgeHelp Icons */}
-                <div className="mb-5">
+                <div className="mb-5 ">
                     <div className="flex items-center mb-5 relative">
                         {/* Bell Icon with Red Dot */}
                         <div className="relative flex cursor-pointer" onClick={handleBellClick}>
@@ -130,7 +130,7 @@ const SideBar = () => {
                         {showNotifications && (
                             <div
                                 ref={popUpRef}
-                                className={`absolute top-35 w-64 bg-${theme === 'dark' ? 'gray-800' : 'white'
+                                className={`absolute top-35 w-64 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'
                                     } border border-gray-300 rounded-lg shadow-lg p-4 z-50`}
                                 style={{
                                     transform: 'translateX(10px)',
@@ -142,7 +142,7 @@ const SideBar = () => {
                                     {notifications.slice(0, 5).map((notification) => (
                                         <li
                                             key={notification.id}
-                                            className={`py-1 ${clickedNotifications.includes(notification.id) ? 'text-gray-500' : ''}`} // Apply gray color to clicked links
+                                            className={`py-1 ${clickedNotifications.includes(notification.id) ? 'text-gray-400' : ''}`} // Apply gray color to clicked links
                                         >
                                             <a
                                                 href={notification.url}

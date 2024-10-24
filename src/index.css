@@ -59,9 +59,18 @@ h1 {
 .view-analytics-container{
   margin-top: 80vh;
   z-index: 2;
-  width: 50vw;
-
+  /* width: 60vw; */
 }
+.custom-border::before {
+  content: '';
+  position: absolute;
+  top: 8%; /* Start the border 10% from the top */
+  right: 0;
+  bottom: 2%; /* End the border 10% from the bottom, making it span 80% of the height */
+  width: 1px; /* Border width */
+  background-color: rgba(107, 114, 128, 0.25); /* border-gray-500 with 55% opacity */
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
