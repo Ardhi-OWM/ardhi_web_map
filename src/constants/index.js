@@ -22,7 +22,7 @@ export const Notifications = [
    
     { 
         id: 1, 
-        name: 'Notification Component update',
+        name: 'Notification Component update - Shammah',
         url: 'https://ardhi.slab.com/posts/notification-component-update-dap03dlu?shr=dm9BKAxUyxYdz2PxchX9R-Jp'
     },
     { 

@@ -103,7 +103,8 @@ const SideBar = () => {
     };
     // ---------------------------- RETURN ----------------------------
     return (
-        <div className="flex flex-col min-h-screen justify-end border-r border-gray-500 border-opacity-20 rounded p-3 overflow-y-auto">
+        // <div className="flex flex-col min-h-screen justify-end border-r border-gray-500 border-opacity-20 rounded p-3 overflow-y-auto">
+        <div className="flex flex-col min-h-screen justify-end border-r border-gray-500 border-opacity-20 rounded p-3 relative z-10 ">
             <div className="pb-10 pl-5">
                 <div className="pb-5">
                     <span
@@ -131,8 +132,11 @@ const SideBar = () => {
                                 ref={popUpRef}
                                 className={`absolute top-35 w-64 bg-${theme === 'dark' ? 'gray-800' : 'white'
                                     } border border-gray-300 rounded-lg shadow-lg p-4 z-50`}
-                                style={{ transform: 'translateX(10px) translateY(-10px)', maxWidth: '90vw' }}
-                            >
+                                style={{
+                                    transform: 'translateX(10px)',
+                                    maxWidth: '90vw',
+                                    overflow: 'visible', // Ensure the pop-up is not clipped
+                                }}>
                                 <h3 className="font-bold mb-2">Latest Notifications</h3>
                                 <ul>
                                     {notifications.slice(0, 5).map((notification) => (

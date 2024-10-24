@@ -45,12 +45,12 @@ const Settings = () => {
                 <div className="flex-shrink-0"> 
                     {/* Theme Toggle */}
                     <div className="mt-5">
-                        <span
+                        <h6
                             onClick={toggleTheme}
                             className="underline cursor-pointer underline-offset-4"
                         >
                             {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-                        </span>
+                        </h6>
                     </div>
                     {/* Go back to dashboard link */}
                     <div className="mt-10">

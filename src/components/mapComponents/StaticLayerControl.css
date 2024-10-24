@@ -9,12 +9,6 @@
     overflow: visible !important;
 }
 
-/* hide the collapse icon
-.leaflet-control-layers-toggle{
-    display: block !important
-    
-}*/
-
 .leaflet-control-layers-separator{
     margin: 10px 0;
 }
