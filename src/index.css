@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
+@import 'flowbite';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -70,8 +71,33 @@ h1 {
   width: 1px; /* Border width */
   background-color: rgba(107, 114, 128, 0.25); /* border-gray-500 with 55% opacity */
 }
+/* ------------------------------ DROPDOWN ------------------------------ */
 
-
+.dropdowns {
+  padding-left: 1rem; /* Tailwind `px-4` equivalent */
+  padding-right: 1rem; 
+  padding-top: 0.5rem; /* Tailwind `py-2` equivalent */
+  padding-bottom: 0.5rem;
+  font-size: 0.875rem; /* Tailwind `text-sm` equivalent */
+  color: #4a5568; /* Tailwind `text-gray-700` equivalent */
+  cursor: pointer;
+  background-color: #f7fafc; /* Tailwind `bg-gray-100` equivalent */
+}
+/* Dark mode styles */
+.dark .dropdowns {
+    background-color: #2d3748; /* Tailwind `bg-gray-700` equivalent */
+    color: #e2e8f0; /* Tailwind `text-gray-300` equivalent */
+}
+.dropdowns:hover {
+  background-color: #ffffff; /* Tailwind `hover:bg-gray-100` equivalent */
+  color: #1a202c; /* Tailwind `hover:text-gray-900` equivalent */
+}
+/* Dark mode hover styles */
+.dark .dropdowns:hover {
+  background-color: #4a5568; /* Dark mode hover */
+  color: #f7fafc;
+}
+/* ------------------------------ ---  ------------------------------ */
 @media (prefers-color-scheme: light) {
   :root {
     --text-color: rgba(8, 8, 8, 0.87);

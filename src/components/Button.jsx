@@ -5,7 +5,7 @@ const Button = ({ className, href, onClick, children, px, white }) => {
     const classes = `button relative inline-flex items-center justify-center 
       h-11 transition-colors hover:text-ourGreen 
       ${px || "px-7"} 
-      ${white ? "text-n-8" : "text-n-1"} 
+      ${white ? "text-n-8" : "text-n-4"} 
       ${className || ""} 
       bg-transparent border-none rounded-tr-lg`;  // Transparent background and rounded top-right border
 

@@ -4,8 +4,7 @@ import plugin from "tailwindcss/plugin";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
-  darkMode: 'selector',  // Enables dark mode based on a class, allowing you to toggle it manually
-
+  darkMode: 'selector',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -17,6 +16,21 @@ export default {
       },
       colors: {
         ourGreen: '#2ecc40',
+        'n-1': "#FFFFFF",
+        'n-2': "#CAC6DD",
+        'n-3': "#ADA8C3",
+        'n-4': "#757185",
+        'n-5': "#3F3A52",
+        'n-6': "#252134",
+        'n-7': "#15131D",
+        'n-8': "#0E0C15",
+        'n-9': "#474060",
+        'n-10': "#43435C",
+        'n-11': "#1B1B2E",
+        'n-12': "#2E2A41",
+        'n-13': "#6C7275",
+        'n-14': '#2ecc40',
+        // Additional colors
         1: "#AC6AFF",
         2: "#FFC876",
         3: "#FF776F",
@@ -26,21 +40,6 @@ export default {
       },
       stroke: {
         1: "#26242C",
-      },
-      n: {
-        1: "#FFFFFF",
-        2: "#CAC6DD",
-        3: "#ADA8C3",
-        4: "#757185",
-        5: "#3F3A52",
-        6: "#252134",
-        7: "#15131D",
-        8: "#0E0C15",
-        9: "#474060",
-        10: "#43435C",
-        11: "#1B1B2E",
-        12: "#2E2A41",
-        13: "#6C7275",
       },
     },
     fontFamily: {

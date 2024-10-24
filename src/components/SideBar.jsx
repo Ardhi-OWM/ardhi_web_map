@@ -131,7 +131,7 @@ const SideBar = () => {
                             <div
                                 ref={popUpRef}
                                 className={`absolute top-35 w-64 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'
-                                    } border border-gray-300 rounded-lg shadow-lg p-4 z-50`}
+                                    } border border-gray-300 rounded-lg shadow-lg p-4 z-[500]`}
                                 style={{
                                     transform: 'translateX(10px)',
                                     maxWidth: '90vw',
