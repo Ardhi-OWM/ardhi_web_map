@@ -8,6 +8,7 @@ import Settings from './Components/Profile/Settings';
 import APIConnections from './Components/APIConnections';
 import Converter from './Components/Converter';
 import ViewAnalytics from './Components/ViewAnalytics';
+import Logout from './Components/Profile/ProfileMenu/Logout';
 
 
 // Layout component with only the Header
@@ -45,44 +46,21 @@ function App() {
         <Router>
             <Routes>
                 {/* Redirect from "/" to "/dashboard" */}
-                <Route path="/"
-                    element={
-                        <Navigate to="/dashboard" />
-                    }
-                />
-
+                <Route path="/" element={ <Navigate to="/dashboard" /> } />
 
                 {/* Route for Dashboard with SideBar */}
-                <Route path="/dashboard"
-                    element={<DashboardLayout />
-                    }
-                />
+                <Route path="/dashboard" element={<DashboardLayout /> } />
 
                 {/* Other routes with only the Header */}
-                <Route path="/api-connections"
-                    element={
-                        <Layout>
-                            <APIConnections />
-                        </Layout>}
-                />
-                <Route path="/converter"
-                    element={
-                        <Layout>
-                            <Converter />
-                        </Layout>}
-                />
+                <Route path="/api-connections" element={ <Layout> <APIConnections /> </Layout> } />
+                <Route path="/converter" element={  <Layout> <Converter /> </Layout> } />
 
-                {/* Standalone settings page */}
-                <Route path="/settings"
-                    element={<Settings />}
-                />
+                {/* Standalone settings and logout page */}
+                <Route path="/settings" element={<Settings /> } />
+                <Route path="/logout" element={<Logout /> } />
 
                 {/* Catch-all route for 404s */}
-                <Route path="*"
-                    element={
-                        <h1>Page Not Found</h1>
-                    }
-                />
+                <Route path="*" element={ <h1>Page Not Found</h1> }/>
             </Routes>
         </Router>
     );

@@ -4,8 +4,13 @@ import { CircleUser } from 'lucide-react';
 
 
 const ProfileMenu = () => {
-    // State to hold the profile picture URL
+    // State to hold the profile picture URL and user info
     const [profilePicture, setProfilePicture] = useState(null);
+    const [user, setUser] = useState({
+        name: "John Doe",  // Replace with the real user name
+        email: "johndoe@example.com",  // Replace with the real user email
+    });
+
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     // Toggle dropdown
@@ -34,21 +39,41 @@ const ProfileMenu = () => {
                 )}
             </div>
 
-            {/* Dropdown menu with higher z-index */}
+            {/* Dropdown menu with user details */}
             {dropdownOpen && (
-                <div className="dropdown-menu dropdowns-container mr-20 fixed right-0 top-14 w-52 border-current rounded-md">
+                <div className="dropdown-menu dropdowns-container mr-20 fixed right-0 top-10 w-60 border-current rounded-md">
                     <ul className="py-1">
-                        <li className="dropdowns rounded-t-md">Signed in as: </li>
+                        {/* User information */}
+                        <li className="dropdowns flex items-center px-4 py-2 rounded-t-md">
+                            {profilePicture ? (
+                                <Avatar
+                                    alt={user.name}
+                                    src={profilePicture}
+                                    sx={{ width: 40, height: 40 }}  // Adjust size as needed
+                                />
+                            ) : (
+                                <Avatar sx={{ width: 40, height: 40, backgroundColor: '#2ecc40' }}>
+                                    <CircleUser className="w-10 h-10 text-gray-100" />
+                                </Avatar>
+                            )}
+                            {/* User's name and email */}
+                            <div className="ml-3">
+                                <p className="text-sm font-semibold">{user.name}</p>
+                                <p className="text-xs italic text-gray-500">{user.email}</p>
+                            </div>
+                        </li>
+
+                        {/* Other dropdown items */}
                         <li className="dropdowns border-t border-gray-500/[.35]">Your Profile</li>
-                        <li className="dropdowns" href= '/settings'>Settings</li>
+                        <li className="dropdowns" > <a href='/settings' target='_blank' > Settings </a> </li>
                         <li className="dropdowns border-t border-gray-500/[.35]">Help us Improve</li>
-                        <li className="dropdowns rounded-b-md">Log Out</li>
+                        <li className="dropdowns rounded-b-md">
+                            <a href="/logout"> Log Out</a>
+                        </li>
                     </ul>
                 </div>
-
-            )
-            }
-        </div >
+            )}
+        </div>
     );
 };
 
